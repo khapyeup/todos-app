@@ -2,15 +2,21 @@
 
 import { useState } from "react";
 
-export default function AddTask({addTask} : any) {
+type AddTaskProps = {
+  addTask: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+export default function AddTask(
+  {addTask}: AddTaskProps
+) {
   const [taskName, setTaskName] = useState("");
 
   function handleClick() {
     if (taskName) {
-        addTask((prevTasks: any) => [...prevTasks, taskName])
-        setTaskName("")
+      addTask((prevTasks) => [...prevTasks, taskName]);
+      setTaskName("");
     } else {
-        alert('Type something')
+      alert("Type something");
     }
   }
   return (
