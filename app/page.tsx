@@ -1,4 +1,3 @@
-import AddTask from "@/components/add-task";
 import Tasks from "@/components/tasks";
 
 export default function Home() {
